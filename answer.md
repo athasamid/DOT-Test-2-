@@ -17,9 +17,10 @@ Iya pernah, sekarang ini semua project yg saya buat telah menggunakan Kotlin. Pe
 ya Saya menggunakan prinsip clean code, selama ini saya menggunakan design pattern MVVM. Prinsip clean code yang saya terapkan antara lain menggunakan nama variable/class/object dengan nama yg mudah di pahami dan menggunakan CamelCase, menggunakan 
 
 ### 4. Apakah tantangan terbesar yang pernah anda temui dalam mengerjakan project Android dan bagaimana anda menyelesaikannya dari sisi engineering?
-
+Tidak ada
 
 ### 5. Untuk efisiensi pengerjaan project dalam tim, bagaimana workflow anda dari proses development hingga merilis aplikasi hingga bisa digunakan oleh tester / client?
+Kita dapat membagi pekerjaan berdasarkan module, misal saya mengerjakan module pelaporan sedangakan teman satu tim mengerjakan module input. atau
 
 ### 6. Jelaskan teknik-teknik apa saja yang dapat meningkatkan performance dan keamanan sebuah aplikasi Android.
 - Komunikasi dengan API harus menggunakan middleware, bisa menggunakan Oauth2
