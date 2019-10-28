@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="viewModel" type="id.atha.samid.dot.test.ui.main.ItemImage"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#fff"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="11dp"
+            app:cardElevation="5dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="@{viewModel.multiple ? View.GONE : View.VISIBLE}">
+                <ImageView
+                        android:id="@+id/image_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:url="@{viewModel.getFirstMedia()}"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.getTitle()}"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+            <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.getContent()}"
+                    android:textSize="14sp"
+                    android:textColor="#000"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:visibility="@{viewModel.multiple ? View.VISIBLE : View.GONE}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="10dp">
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/pager"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:setHorizontalAdapter="@{viewModel.getAdapter()}"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
