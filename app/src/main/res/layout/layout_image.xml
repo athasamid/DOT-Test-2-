@@ -3,8 +3,10 @@
     <data>
         <variable name="viewModel" type="String"/>
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content"
-                                                       android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fff">
         <ImageView
                 android:layout_width="300dp"
                 android:layout_height="0dp"
@@ -15,6 +17,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginEnd="10dp"
                 android:scaleType="centerCrop"
+                android:src="@drawable/no_img"
                 app:url="@{viewModel}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

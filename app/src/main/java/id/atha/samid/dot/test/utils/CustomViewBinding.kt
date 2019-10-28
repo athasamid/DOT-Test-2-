@@ -10,6 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import id.atha.samid.dot.test.R
 
 object CustomViewBinding{
     @BindingAdapter("url")
@@ -18,8 +19,9 @@ object CustomViewBinding{
         if (imageView != null) {
             Log.e("bindingUrlImageview", url.toString())
             Glide.with(imageView.context)
-                .setDefaultRequestOptions(RequestOptions().timeout(5*60*1000))
+                //.setDefaultRequestOptions(RequestOptions().error(R.drawable.no_img).fallback(R.drawable.no_img))
                 .load(url)
+                .error(Glide.with(imageView.context).load("https://www.diabetesqualified.com.au/wp-content/uploads/2016/11/noImg-768x576.jpg"))
                 .centerCrop()
                 .into(imageView)
         }
